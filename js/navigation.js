@@ -21,7 +21,35 @@
   });
 
   function showCarDetails() {
-      
+
+
+    var nameField = document.forms["personalDetailsForm"] ["nameInput"].value;
+    if (nameField == null  || nameField == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+
+ var ageField = document.forms["personalDetailsForm"] ["numberAge"].value;
+    if (ageField == null  || ageField == "") {
+      alert("Age must be filled out");
+      return false;
+    }
+
+    var townCityField = document.forms["personalDetailsForm"] ["townCityInput"].value;
+    if (townCityField == null  || townCityField == "") {
+      alert("Town/City must be filled out");
+      return false;
+    }
+
+    var genderField1 = document.forms["personalDetailsForm"] ["sex1"].value;
+    var genderField2 = document.forms["personalDetailsForm"] ["sex2"].value;
+    if ((genderField1.checked == false) && (genderField2.checked == false )) {
+      alert("Town/City must be filled out");
+      return false;
+    }
+    $('#dvPersonalDetails').hide(); 
+     $('#dvCarDetails').show();
+
     // Hide the personal details section (dvPersonalDetails)
     // Hide the quote section (dvQuoteDetails)
     // Show the car details section (dvCarDetails)
@@ -29,6 +57,12 @@
   }
 
   function showPersonalDetails() {
+
+
+
+    $('#dvPersonalDetails').show(); 
+     $('#dvCarDetails').hide();
+
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
@@ -40,11 +74,11 @@
       // Show the quote section (dvPersonalDetails)
   }
 
-  function getQuote() {
+  /*function getQuote() {
 
     // Perform validation to test that all data has been entered
 
-    if (/* Page is Valid */)
+    if (/* Page is Valid )
     {
 
       // Get the values from the page elements that you need to create your JSON
@@ -52,13 +86,13 @@
       $.ajax({
           type: "GET",
           url: "http://localhost:53753/api/rating/CalculateRates",
-          data: { /* create JSON here */ }
+          data: { /* create JSON here  }
         }).done(function(msg) {
           // Put the return value into Label created on quote details
           // Hide the Car Details section
           // Display the quote details page
       });
-  }
+  }*/
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
 
