@@ -133,23 +133,34 @@ var storageInput = document.getElementById("storage");
   }
 
   function getQuote() {
-/*
+
     // Perform validation to test that all data has been entered
 
-    if (/* Page is Valid )
+    if (true)
     {
 
       // Get the values from the page elements that you need to create your JSON
 
+ var ageField = $("#numberAge").val();
+
+    var genderField = $ ("#gender input:radio[name=gender]:checked").val();
+    
+
+   var claimsField2 = $("#claimsField option:selected").val();
+
+    var valueField = $("#numberEstimatedValue").val();
+
+    var storageInput = $("#storage option:selected").val();
+
       $.ajax({
           type: "GET",
           url: "http://localhost:53753/api/rating/CalculateRates",
-          data: { /* create JSON here  }
+          data: {gender:genderField, age:ageField, noClaimsBonus:claimsField2, costOfCar:valueField, carStorage:storgeInput}
         }).done(function(msg) {
-          // Put the return value into Label created on quote details
-          // Hide the Car Details section
-          // Display the quote details page
-      });*/
+          $("#txtQuote").text(msg.result.toFixed(2));
+          showQuoteDetails();
+      
+      }); 
   }
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
