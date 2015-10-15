@@ -22,7 +22,7 @@
 
   function showCarDetails() {
 
-
+/*
     var nameField = document.forms["personalDetailsForm"] ["nameInput"].value;
     if (nameField == null  || nameField == "") {
       alert("Name must be filled out");
@@ -41,15 +41,30 @@
       return false;
     }
 
-    var genderField1 = document.forms["personalDetailsForm"] ["sex1"].value;
-    var genderField2 = document.forms["personalDetailsForm"] ["sex2"].value;
-    if ((genderField1.checked == false) && (genderField2.checked == false )) {
-      alert("Town/City must be filled out");
+
+    var claimsField2 = document.getElementById("claimsField");
+    if(claimsField2.selectedIndex==0){
+      alert("Claims Field must be filled out") ;
       return false;
     }
-    $('#dvPersonalDetails').hide(); 
-     $('#dvCarDetails').show();
 
+    var genderField1 = document.getElementsByName ("gender1");
+    var genderField2 = document.getElementsByName ("gender2");
+    if ((genderField1.checked == false) && (genderField2.checked == false )) {
+      alert("Gender must be filled out");
+      return false;
+    }
+
+     var emailAddressField = document.forms["personalDetailsForm"] ["emailAddressInput"].value;
+    if (emailAddressField == null  || emailAddressField == "") {
+      alert("Email Address must be filled out");
+      return false;
+    } */
+
+    $('#dvPersonalDetails').hide();
+    $('#dvQuoteDetails').hide(); 
+    $('#dvCarDetails').show();
+      
     // Hide the personal details section (dvPersonalDetails)
     // Hide the quote section (dvQuoteDetails)
     // Show the car details section (dvCarDetails)
@@ -59,23 +74,66 @@
   function showPersonalDetails() {
 
 
-
+    $('#dvQuoteDetails').hide();
+    $('#dvCarDetails').hide();
     $('#dvPersonalDetails').show(); 
-     $('#dvCarDetails').hide();
-
+     
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
   }
 
   function showQuoteDetails() {
+   /*
+   var manufacturerInput = document.getElementById("manufacturer");
+    if(manufacturerInput.selectedIndex==0){
+      alert("Manufacturer must be filled out") ;
+      return false;
+    }
+
+     var modelInputField = document.forms["CarDetailsForm"] ["txtModel"].value;
+    if (modelInputField == null  || modelInputField == "") {
+      alert("Model must be filled out");
+      return false;
+    }
+
+var ageInputField = document.forms["CarDetailsForm"] ["txtAge"].value;
+    if (ageInputField == null  || ageInputField == "") {
+      alert("Car Age must be filled out");
+      return false;
+    }
+
+    var engineSizeInputField = document.forms["CarDetailsForm"] ["txtEngine"].value;
+    if (engineSizeInputField == null  || engineSizeInputField == "") {
+      alert("Engine Size must be filled out");
+      return false;
+    }
+
+var storageInput = document.getElementById("storage");
+    if(storageInput.selectedIndex==0){
+      alert("Storage must be filled out") ;
+      return false;
+    }
+
+    var valueField = document.forms["CarDetailsForm"] ["numberEstimatedValue"].value;
+    if (valueField == null  || valueField == "") {
+      alert("Estimated Value must be filled out");
+      return false;
+    }
+
+*/
+
+
+    $('#dvPersonalDetails').hide();
+    $('#dvCarDetails').hide();
+     $('#dvQuoteDetails').show();
       // Hide the car details section (dvCarDetails)
       // Hide the personal details section (dvQuoteDetails)
       // Show the quote section (dvPersonalDetails)
   }
 
-  /*function getQuote() {
-
+  function getQuote() {
+/*
     // Perform validation to test that all data has been entered
 
     if (/* Page is Valid )
@@ -91,8 +149,8 @@
           // Put the return value into Label created on quote details
           // Hide the Car Details section
           // Display the quote details page
-      });
-  }*/
+      });*/
+  }
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
 
